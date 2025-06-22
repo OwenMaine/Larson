@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Larson Welding & Machine Co.</title>
+    <meta name="description" content="Explore our expert services in custom fabrication, heavy equipment repair, and precision machining in Fargo, ND.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Animate.css (for WOW.js) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-brand-light text-brand-dark font-sans">
+
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 w-full z-50 p-6 md:p-8 flex justify-between items-center scrolled">
+        <a href="index.html" class="logo text-2xl font-bold tracking-tighter z-50">
+            Larson<span class="text-brand-yellow">.</span>
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-button" class="md:hidden z-50 text-2xl">
+            <i class="fas fa-bars" id="menu-open-icon"></i>
+            <i class="fas fa-times hidden" id="menu-close-icon"></i>
+        </button>
+
+        <!-- Navigation Menu -->
+        <nav id="mobile-menu" class="mobile-nav-menu">
+            <ul class="flex flex-col md:flex-row gap-8 md:gap-10 text-xl md:text-base font-medium">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link active">Services</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SERVICES HERO -->
+        <section class="pt-32 md:pt-48 pb-16 md:pb-24 bg-white">
+            <div class="container mx-auto px-6 md:px-12 text-center">
+                <h1 class="text-5xl md:text-7xl font-serif font-bold wow animate__animated animate__fadeInDown">Our Disciplines.</h1>
+                <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
+                    A detailed look into our core capabilities, engineered for performance and durability.
+                </p>
+            </div>
+        </section>
+
+        <!-- SERVICES ACCORDION -->
+        <section class="py-12 md:py-24">
+            <div class="container mx-auto px-6 md:px-12 max-w-5xl">
+                <div class="services-accordion-container border-t border-gray-300 wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
+                    <!-- Service 1: Custom Fabrication -->
+                    <div class="service-accordion-item">
+                        <button class="service-accordion-question">
+                            <span class="service-accordion-number">01</span>
+                            <h3 class="service-accordion-title">Custom Fabrication</h3>
+                            <i class="fas fa-plus service-accordion-icon"></i>
+                        </button>
+                        <div class="service-accordion-answer">
+                            <div class="service-accordion-content">
+                                <img src="images/9.jpg" alt="Custom metal fabrication" class="b-w-image">
+                                <div>
+                                    <p>We transform raw materials like steel, stainless steel, and aluminum into bespoke components and assemblies. From initial concept to final product, our fabrication process is defined by precision and a deep understanding of metal properties.</p>
+                                    <ul class="mt-4 space-y-2 list-disc list-inside text-gray-600">
+                                        <li>Prototyping & One-Off Parts</li>
+                                        <li>Structural Components & Frames</li>
+                                        <li>Platforms, Ladders & Handrails</li>
+                                        <li>Sheet Metal Work</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Service 2: Equipment Repair -->
+                    <div class="service-accordion-item">
+                        <button class="service-accordion-question">
+                            <span class="service-accordion-number">02</span>
+                            <h3 class="service-accordion-title">Equipment Repair</h3>
+                            <i class="fas fa-plus service-accordion-icon"></i>
+                        </button>
+                         <div class="service-accordion-answer">
+                            <div class="service-accordion-content">
+                                <img src="images/10.jpg" alt="Repairing heavy equipment" class="b-w-image">
+                                <div>
+                                    <p>Downtime is costly. We specialize in heavy-duty welding repairs for agricultural and industrial equipment, reinforcing weak points and replacing damaged sections to get your machinery back in service quickly and reliably.</p>
+                                    <ul class="mt-4 space-y-2 list-disc list-inside text-gray-600">
+                                        <li>Bucket & Attachment Repair</li>
+                                        <li>Frame & Chassis Reinforcement</li>
+                                        <li>Hardfacing for Wear Resistance</li>
+                                        <li>Trailer & Implement Repairs</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Service 3: Precision Machining -->
+                    <div class="service-accordion-item">
+                        <button class="service-accordion-question">
+                            <span class="service-accordion-number">03</span>
+                            <h3 class="service-accordion-title">Precision Machining</h3>
+                            <i class="fas fa-plus service-accordion-icon"></i>
+                        </button>
+                         <div class="service-accordion-answer">
+                           <div class="service-accordion-content">
+                                <img src="images/11.jpg" alt="A lathe machining a metal part" class="b-w-image">
+                                <div>
+                                    <p>Our machine shop is equipped with lathes, mills, and drills to create custom parts with exacting tolerances. Whether you need a replacement component or a newly designed part, we deliver precision you can count on.</p>
+                                    <ul class="mt-4 space-y-2 list-disc list-inside text-gray-600">
+                                        <li>Turning, Milling & Drilling</li>
+                                        <li>Shaft & Bushing Fabrication</li>
+                                        <li>Keyway Cutting</li>
+                                        <li>Custom Brackets & Mounts</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION -->
+        <section class="py-24 text-center bg-white">
+            <div class="container mx-auto px-6 md:px-12 wow animate__animated animate__zoomIn">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold">Have a Technical Challenge?</h2>
+                <p class="max-w-xl mx-auto mt-4 mb-8">Bring us your problem. We'll forge the solution.</p>
+                <a href="#" class="cta-button">Request a Quote</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-16 bg-white">
+        <div class="container mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+             <div>
+                <h4 class="font-bold uppercase tracking-wider">Address</h4>
+                <p class="mt-2 text-sm text-gray-600">2610 1st Ave N<br>Fargo, ND 58102-4008</p>
+            </div>
+            <div>
+                <h4 class="font-bold uppercase tracking-wider">Contact</h4>
+                <a href="mailto:admin@larsonweldmachco.com" class="block mt-2 text-sm text-gray-600 hover:text-brand-yellow">admin@larsonweldmachco.com</a>
+            </div>
+            <div>
+                <h4 class="font-bold uppercase tracking-wider">Hours</h4>
+                <p class="mt-2 text-sm text-gray-600">Mon - Fri: 7:30 AM - 5:00 PM</p>
+            </div>
+        </div>
+        <div class="text-center text-xs text-gray-400 mt-12 pt-8 border-t border-gray-200">
+            <p>&copy; <span id="year"></span> Larson Welding & Machine Co. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- WOW.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,459 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap');
+
+/*
+  font-family: 'Playfair Display', serif; -- Headings
+  font-family: 'Inter', sans-serif;      -- Body
+*/
+
+:root {
+    --brand-light: #f4f4f4;
+    --brand-dark: #222222;
+    --brand-yellow: #FFD300;
+}
+
+/* Base Styles */
+body {
+    background-color: var(--brand-light);
+    color: var(--brand-dark);
+}
+.font-serif { font-family: 'Playfair Display', serif; }
+.font-sans { font-family: 'Inter', sans-serif; }
+
+/* Header & Navigation */
+header {
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+header.scrolled {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo { 
+    color: white;
+    transition: color 0.4s ease;
+}
+header.scrolled .logo {
+    color: var(--brand-dark);
+}
+
+.text-brand-yellow { color: var(--brand-yellow); }
+
+/* Mobile menu button color */
+#mobile-menu-button {
+    color: white;
+    transition: color 0.4s ease;
+}
+header.scrolled #mobile-menu-button {
+    color: var(--brand-dark);
+}
+
+.nav-link {
+    position: relative;
+    padding-bottom: 8px;
+    color: white; /* CORRECTED: Default to white */
+    transition: color 0.4s ease;
+}
+header.scrolled .nav-link {
+    color: var(--brand-dark); /* Revert to dark on scroll */
+}
+
+.nav-link:hover {
+    color: var(--brand-yellow);
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--brand-yellow);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+.nav-link.active {
+    color: white; /* CORRECTED: Active link is white by default */
+}
+header.scrolled .nav-link.active {
+    color: var(--brand-dark); /* Revert active link color on scroll */
+}
+
+/* General Styling */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.b-w-image {
+    filter: grayscale(100%) contrast(1.1);
+    transition: filter 0.4s ease;
+}
+.about-image-wrapper:hover .b-w-image {
+    filter: grayscale(0%);
+}
+.about-image-wrapper {
+    padding: 1rem;
+    border: 1px solid #ddd;
+}
+
+.cta-link {
+    display: inline-block;
+    margin-top: 2rem;
+    font-weight: 500;
+    color: var(--brand-dark);
+    border-bottom: 2px solid var(--brand-yellow);
+    padding-bottom: 4px;
+    transition: color 0.3s;
+}
+.cta-link:hover {
+    color: var(--brand-yellow);
+}
+
+/* Featured Services List */
+.service-item {
+    display: flex;
+    align-items: center;
+    padding: 2.5rem 1.5rem;
+    border-bottom: 1px solid #ddd;
+    text-decoration: none;
+    color: var(--brand-dark);
+    transition: background-color 0.3s ease;
+}
+.service-item:hover {
+    background-color: white;
+}
+.service-number {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ccc;
+    margin-right: 2rem;
+}
+.service-title {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    flex-grow: 1;
+}
+.service-desc {
+    color: #666;
+    max-width: 300px;
+    transition: opacity 0.3s ease;
+}
+.service-arrow {
+    font-size: 1.5rem;
+    color: var(--brand-yellow);
+    margin-left: 2rem;
+    transform: translateX(-10px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.service-item:hover .service-arrow {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .service-title { font-size: 1.5rem; }
+    .service-desc { display: none; }
+}
+
+
+/* CTA Button */
+.cta-button {
+    display: inline-block;
+    background-color: var(--brand-yellow);
+    color: var(--brand-dark);
+    font-weight: 700;
+    padding: 1rem 3rem;
+    transition: background-color 0.3s ease;
+    border: 2px solid var(--brand-yellow);
+}
+.cta-button:hover {
+    background-color: transparent;
+    color: var(--brand-yellow);
+}
+
+/* RESPONSIVE NAVIGATION STYLES */
+.mobile-nav-menu {
+    position: fixed;
+    transform: translateX(100%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+    z-index: 40;
+}
+.mobile-nav-menu.menu-open {
+    transform: translateX(0);
+}
+/* On mobile, nav links are always dark on the light overlay */
+.mobile-nav-menu .nav-link,
+.mobile-nav-menu .nav-link.active {
+    color: var(--brand-dark) !important;
+}
+
+@media (min-width: 768px) {
+    .mobile-nav-menu {
+        position: static;
+        transform: translateX(0);
+        background-color: transparent;
+        backdrop-filter: none;
+        width: auto;
+        height: auto;
+        display: block;
+        z-index: auto;
+    }
+}
+
+/* ========================================= */
+/* === ADDITIONAL STYLES FOR ABOUT.HTML === */
+/* ========================================= */
+
+/* Note: For the About page, we want the header dark from the start */
+header.scrolled {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+header.scrolled .logo,
+header.scrolled #mobile-menu-button,
+header.scrolled .nav-link,
+header.scrolled .nav-link.active {
+    color: var(--brand-dark);
+}
+
+/* History Timeline */
+.timeline-container {
+    position: relative;
+    padding-left: 2rem;
+    border-left: 2px solid #e5e5e5;
+}
+.timeline-item {
+    position: relative;
+    padding-left: 2rem;
+    padding-bottom: 3rem;
+}
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+/* The yellow dot on the timeline */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2.75rem;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    background-color: var(--brand-yellow);
+    border-radius: 50%;
+    border: 2px solid var(--brand-light);
+}
+.timeline-year {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--brand-yellow);
+    margin-bottom: 0.25rem;
+}
+.timeline-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+.timeline-desc {
+    color: #666;
+}
+
+/* Values Card */
+.values-card {
+    background-color: white;
+    padding: 2.5rem;
+    border: 1px solid #e5e5e5;
+}
+.value-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+.value-item i {
+    color: var(--brand-yellow);
+    font-size: 1.25rem;
+    margin-top: 0.25rem;
+}
+
+/* Meet the Team */
+.team-card {
+    text-align: center;
+}
+.team-image-container {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.team-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
+.team-card:hover .team-image-container img {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+.team-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+}
+.team-title {
+    color: #888;
+    margin-top: 0.25rem;
+}
+
+/* =========================================== */
+/* === ADDITIONAL STYLES FOR SERVICES.HTML === */
+/* =========================================== */
+
+.service-accordion-item {
+    border-bottom: 1px solid #ddd;
+}
+.service-accordion-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 2rem 1.5rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.service-accordion-question:hover {
+    background-color: white;
+}
+.service-accordion-number {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ccc;
+    margin-right: 2rem;
+}
+.service-accordion-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.25rem;
+    font-weight: 700;
+    flex-grow: 1;
+}
+.service-accordion-icon {
+    font-size: 1.25rem;
+    color: var(--brand-dark);
+    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* Accordion Active State */
+.service-accordion-question.active .service-accordion-title {
+    color: var(--brand-yellow);
+}
+.service-accordion-question.active .service-accordion-icon {
+    transform: rotate(45deg);
+}
+
+/* Accordion Answer Panel */
+.service-accordion-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+    background-color: white;
+}
+.service-accordion-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 1.5rem 2.5rem 5.5rem;
+}
+.service-accordion-content img {
+    max-height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+
+@media (min-width: 768px) {
+    .service-accordion-content {
+        grid-template-columns: 300px 1fr;
+    }
+}
+@media (max-width: 767px) {
+    .service-accordion-title { font-size: 1.5rem; }
+    .service-accordion-content { padding-left: 1.5rem; padding-right: 1.5rem; }
+}
+
+/* =========================================== */
+/* === ADDITIONAL STYLES FOR CONTACT.HTML === */
+/* =========================================== */
+
+/* Contact Form Styles */
+.contact-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #888;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.contact-input {
+    width: 100%;
+    background-color: var(--brand-light);
+    border: 1px solid #ddd;
+    padding: 0.75rem 1rem;
+    color: var(--brand-dark);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-input:focus {
+    outline: none;
+    border-color: var(--brand-yellow);
+    box-shadow: 0 0 0 3px rgba(255, 211, 0, 0.3);
+}
+
+textarea.contact-input {
+    resize: vertical;
+}
+
+/* New Small Map Container */
+.map-container-small {
+    position: relative;
+    border: 1px solid #ddd;
+    width: 100%;
+    padding-top: 75%; /* Aspect ratio 4:3 (300/400) */
+}
+
+.map-container-small iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* This filter creates the high-contrast B&W map */
+    filter: grayscale(100%) contrast(1.2);
+}
+
+
+
+

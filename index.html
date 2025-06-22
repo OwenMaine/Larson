@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Larson Welding & Machine Co. | Fargo, ND</title>
+    <meta name="description" content="Larson Welding & Machine Co. is Fargo's premier destination for custom welding, fabrication, and precision machining services.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Animate.css (for WOW.js) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-brand-light text-brand-dark font-sans">
+
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 w-full z-50 p-6 md:p-8 flex justify-between items-center">
+        <a href="index.html" class="logo text-2xl font-bold tracking-tighter z-50">
+            Larson<span class="text-brand-yellow">.</span>
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-button" class="md:hidden z-50 text-2xl">
+            <i class="fas fa-bars" id="menu-open-icon"></i>
+            <i class="fas fa-times hidden" id="menu-close-icon"></i>
+        </button>
+
+        <!-- Navigation Menu -->
+        <nav id="mobile-menu" class="mobile-nav-menu">
+            <ul class="flex flex-col md:flex-row gap-8 md:gap-10 text-xl md:text-base font-medium">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="min-h-screen bg-cover bg-center flex items-center" style="background-image: url('images/1.jpg');">
+            <div class="absolute inset-0 bg-black/50"></div>
+            <div class="container mx-auto px-6 md:px-12 relative z-10">
+                <h1 class="text-5xl md:text-8xl text-white font-serif font-bold wow animate__animated animate__fadeInDown">
+                    Where Metal<br>Meets Mettle.
+                </h1>
+                <p class="mt-6 text-lg text-gray-200 max-w-xl wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
+                    Larson Welding & Machine Co. combines generations of craft with modern precision to forge solutions that last.
+                </p>
+            </div>
+        </section>
+
+        <!-- ABOUT US (BRIEF) -->
+        <section class="py-20 md:py-32">
+            <div class="container mx-auto px-6 md:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div class="wow animate__animated animate__fadeInLeft">
+                        <h2 class="section-title">The Art of <br>the Arc.</h2>
+                        <p class="mt-6 leading-relaxed">
+                            For over 40 years, Larson Welding & Machine Co. has been a cornerstone of Fargo's industrial and agricultural community. We're not just metalworkers; we're problem-solvers. From heavy equipment repair to intricate custom fabrications, we approach every project with a commitment to durability, function, and unparalleled craftsmanship.
+                        </p>
+                        <a href="#" class="cta-link">Discover Our Story &rarr;</a>
+                    </div>
+                    <div class="wow animate__animated animate__fadeInRight" data-wow-delay="0.2s">
+                        <div class="about-image-wrapper">
+                            <img src="images/2.jpg" alt="A welder working on a custom fabrication project" class="b-w-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED SERVICES -->
+        <section class="py-20 md:py-32 bg-white">
+            <div class="container mx-auto px-6 md:px-12">
+                <div class="text-center wow animate__animated animate__fadeInDown">
+                    <h2 class="section-title">Core Disciplines</h2>
+                    <p class="mt-4 max-w-2xl mx-auto">We specialize in a focused range of services, ensuring expert results every time.</p>
+                </div>
+                <div class="mt-16 border-t border-gray-200">
+                    <!-- Service 1 -->
+                    <a href="#" class="service-item wow animate__animated animate__fadeIn" data-wow-delay="0.1s">
+                        <span class="service-number">01</span>
+                        <h3 class="service-title">Custom Fabrication</h3>
+                        <p class="service-desc">Turning your concepts into robust, functional realities.</p>
+                        <i class="fas fa-arrow-right service-arrow"></i>
+                    </a>
+                    <!-- Service 2 -->
+                    <a href="#" class="service-item wow animate__animated animate__fadeIn" data-wow-delay="0.2s">
+                        <span class="service-number">02</span>
+                        <h3 class="service-title">Equipment Repair</h3>
+                        <p class="service-desc">Heavy-duty repairs for agricultural and industrial machinery.</p>
+                        <i class="fas fa-arrow-right service-arrow"></i>
+                    </a>
+                    <!-- Service 3 -->
+                    <a href="#" class="service-item wow animate__animated animate__fadeIn" data-wow-delay="0.3s">
+                        <span class="service-number">03</span>
+                        <h3 class="service-title">Precision Machining</h3>
+                        <p class="service-desc">Creating custom parts and components to exact specifications.</p>
+                        <i class="fas fa-arrow-right service-arrow"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION -->
+        <section class="py-24 text-center bg-brand-dark text-white" style="background-color: black;">
+            <div class="container mx-auto px-6 md:px-12 wow animate__animated animate__zoomIn">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold">Have a Project in Mind?</h2>
+                <p class="max-w-xl mx-auto mt-4 mb-8">Let's discuss the blueprints. We're ready to build.</p>
+                <a href="#" class="cta-button">Start a Conversation</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-16 bg-white">
+        <div class="container mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            <div>
+                <h4 class="font-bold uppercase tracking-wider">Address</h4>
+                <p class="mt-2 text-sm text-gray-600">2610 1st Ave N<br>Fargo, ND 58102-4008</p>
+            </div>
+            <div>
+                <h4 class="font-bold uppercase tracking-wider">Contact</h4>
+                <a href="mailto:admin@larsonweldmachco.com" class="block mt-2 text-sm text-gray-600 hover:text-brand-yellow">admin@larsonweldmachco.com</a>
+            </div>
+            <div>
+                <h4 class="font-bold uppercase tracking-wider">Hours</h4>
+                <p class="mt-2 text-sm text-gray-600">Mon - Fri: 7:30 AM - 5:00 PM</p>
+            </div>
+        </div>
+        <div class="text-center text-xs text-gray-400 mt-12 pt-8 border-t border-gray-200">
+            <p>&copy; <span id="year"></span> Larson Welding & Machine Co. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- WOW.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script/script.js"></script>
+</body>
+</html>
