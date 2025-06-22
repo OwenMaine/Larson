@@ -194,7 +194,7 @@ header.scrolled .nav-link.active {
 }
 
 
-/* RESPONSIVE NAVIGATION STYLES */
+/* --- RESPONSIVE NAVIGATION STYLES (CORRECTED) --- */
 .mobile-nav-menu {
     position: fixed;
     transform: translateX(100%);
@@ -213,10 +213,12 @@ header.scrolled .nav-link.active {
 .mobile-nav-menu.menu-open {
     transform: translateX(0);
 }
-/* On mobile, nav links are always dark on the light overlay */
-.mobile-nav-menu .nav-link,
-.mobile-nav-menu .nav-link.active {
-    color: var(--brand-dark) !important;
+/* This rule now ONLY applies when the mobile menu is open */
+.mobile-nav-menu.menu-open .nav-link {
+    color: var(--brand-dark);
+}
+.mobile-nav-menu.menu-open .nav-link.active {
+    color: var(--brand-dark); /* Ensures active link is also dark in open menu */
 }
 
 @media (min-width: 768px) {
@@ -231,6 +233,7 @@ header.scrolled .nav-link.active {
         z-index: auto;
     }
 }
+
 
 
 /* ========================================= */
