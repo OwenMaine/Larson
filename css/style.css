@@ -19,6 +19,14 @@ body {
 .font-serif { font-family: 'Playfair Display', serif; }
 .font-sans { font-family: 'Inter', sans-serif; }
 
+/* 3D Foil Canvas Container */
+#foil-canvas-container {
+    background-color: #111; /* Fallback background */
+}
+#foil-canvas-container canvas {
+    display: block; /* Removes bottom space */
+}
+
 /* Header & Navigation */
 header {
     transition: background-color 0.4s ease, box-shadow 0.4s ease;
@@ -50,11 +58,11 @@ header.scrolled #mobile-menu-button {
 .nav-link {
     position: relative;
     padding-bottom: 8px;
-    color: white; /* CORRECTED: Default to white */
+    color: white;
     transition: color 0.4s ease;
 }
 header.scrolled .nav-link {
-    color: var(--brand-dark); /* Revert to dark on scroll */
+    color: var(--brand-dark);
 }
 
 .nav-link:hover {
@@ -78,10 +86,10 @@ header.scrolled .nav-link {
     transform-origin: left;
 }
 .nav-link.active {
-    color: white; /* CORRECTED: Active link is white by default */
+    color: white;
 }
 header.scrolled .nav-link.active {
-    color: var(--brand-dark); /* Revert active link color on scroll */
+    color: var(--brand-dark);
 }
 
 /* General Styling */
@@ -180,6 +188,11 @@ header.scrolled .nav-link.active {
     background-color: transparent;
     color: var(--brand-yellow);
 }
+/* For CTA on dark background */
+.bg-brand-dark .cta-button:hover {
+    color: var(--brand-yellow);
+}
+
 
 /* RESPONSIVE NAVIGATION STYLES */
 .mobile-nav-menu {
@@ -218,6 +231,7 @@ header.scrolled .nav-link.active {
         z-index: auto;
     }
 }
+
 
 /* ========================================= */
 /* === ADDITIONAL STYLES FOR ABOUT.HTML === */
